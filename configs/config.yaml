@@ -1,0 +1,48 @@
+# =========================
+# EvoGenPR Configuration
+# =========================
+
+project:
+  name: EvoGenPR
+  seed: 42
+  device: cuda
+
+dataset:
+  name: NIH-ChestXray14
+  image_size: 224
+  num_classes: 14
+  batch_size: 16
+  num_workers: 4
+
+training:
+  folds: 5
+  epochs:
+    gpr: 20
+    senpr: 15
+    fegl_cycles: 5
+  lr:
+    gpr: 0.0002
+    senpr: 0.0001
+  weight_decay: 0.00001
+
+loss:
+  focal:
+    gamma: 2.0
+    alpha: 0.25
+  ewc_lambda: 0.4
+  recon_weight: 50.0
+  adv_weight: 1.0
+  latent_weight: 1.0
+
+gpr:
+  latent_dim: 256
+  diffusion_steps: 50
+
+evaluation:
+  compute_fid: true
+  compute_inception_score: true
+  threshold: 0.5
+
+logging:
+  save_dir: ./outputs
+  log_interval: 50
