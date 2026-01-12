@@ -1,16 +1,20 @@
-import timm
-import torchvision.models as models
 import torch.nn as nn
+import torchvision.models as models
+
 
 def resnet_encoder():
-    model = models.resnet18(pretrained=True)
+    """
+    Returns a ResNet-18 encoder with output dim = 512
+    """
+    model = models.resnet18(weights=models.ResNet18_Weights.DEFAULT)
     model.fc = nn.Identity()
     return model
 
+
 def swin_encoder():
-    model = timm.create_model(
-        "swin_tiny_patch4_window7_224",
-        pretrained=True,
-        num_classes=0
-    )
+    """
+    Returns a Swin-T encoder with output dim = 768
+    """
+    model = models.swin_t(weights=models.Swin_T_Weights.DEFAULT)
+    model.head = nn.Identity()
     return model
