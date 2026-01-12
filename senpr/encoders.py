@@ -1,10 +1,12 @@
+
 import torch.nn as nn
 import torchvision.models as models
 
 
 def resnet_encoder():
     """
-    Returns a ResNet-18 encoder with output dim = 512
+    ResNet-18 encoder
+    Output: [B, 512]
     """
     model = models.resnet18(weights=models.ResNet18_Weights.DEFAULT)
     model.fc = nn.Identity()
@@ -13,7 +15,8 @@ def resnet_encoder():
 
 def swin_encoder():
     """
-    Returns a Swin-T encoder with output dim = 768
+    Swin-T encoder
+    Output: [B, 768]
     """
     model = models.swin_t(weights=models.Swin_T_Weights.DEFAULT)
     model.head = nn.Identity()
