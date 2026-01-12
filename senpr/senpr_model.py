@@ -1,4 +1,6 @@
 import torch.nn as nn
+from senpr.encoders import resnet_encoder, swin_encoder
+from senpr.fusion import FeatureGrafting, SPFM
 class SENPR(nn.Module):
     def __init__(self, num_classes):
         super().__init__()

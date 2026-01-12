@@ -1,5 +1,6 @@
 import timm
 import torchvision.models as models
+import torch.nn as nn
 
 def resnet_encoder():
     model = models.resnet18(pretrained=True)
