@@ -1,3 +1,5 @@
+import torch
+import torch.nn as nn
 class GANGenerator(nn.Module):
     def __init__(self, latent_dim=256):
         super().__init__()

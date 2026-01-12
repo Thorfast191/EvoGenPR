@@ -1,3 +1,4 @@
+import torch
 class EWC:
     def __init__(self, model, dataloader, device):
         self.model = model

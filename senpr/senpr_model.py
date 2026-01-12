@@ -1,3 +1,4 @@
+import torch.nn as nn
 class SENPR(nn.Module):
     def __init__(self, num_classes):
         super().__init__()

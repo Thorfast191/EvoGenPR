@@ -1,3 +1,5 @@
+import torch
+import torch.nn as nn
 class FeatureGrafting(nn.Module):
     def __init__(self, dim1, dim2, out_dim):
         super().__init__()

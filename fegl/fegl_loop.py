@@ -1,3 +1,5 @@
+import torch
+
 def fegl_cycle(gpr, senpr, dataloader, optimizer, ewc=None):
     senpr.train()
     for x, y in dataloader:
