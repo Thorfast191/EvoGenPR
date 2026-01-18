@@ -11,6 +11,8 @@ class SPFM(nn.Module):
 
     def forward(self, x):
         return self.fc(x)
+    
+    
 class FeatureGrafting(nn.Module):
     def __init__(self, dim1, dim2, out_dim):
         super().__init__()
