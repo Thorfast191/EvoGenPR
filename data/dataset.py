@@ -31,5 +31,5 @@ class ChestXrayDataset(Dataset):
         if self.transform:
             image = self.transform(image)
 
-        label = self.labels[idx]
+        label = torch.tensor(self.labels[idx], dtype=torch.float32)
         return image, label
